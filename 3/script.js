@@ -15,7 +15,7 @@ websocket.onmessage = function (evt) {
     createMes(evt.data);
 };
 websocket.onerror = function (evt) {
-    console.log(ERROR);
+    console.log("ERROR");
 };
 
 function createMes(message, side="server") {
@@ -29,11 +29,12 @@ function createMes(message, side="server") {
 }
 
 btnSend.addEventListener('click', async function () {
-    let message = input.value;
+    let message = input.value.trim();
     if (message) {
         createMes(message, 'client');
         input.value = "";
         websocket.send(message);
+        btnSend.setAttribute("disabled", "disabled");
     }
 });
 
@@ -52,4 +53,11 @@ btnSendGeo.addEventListener('click', async function () {
     }
 });
 
+input.addEventListener('input', () => {
+    if (input.value.trim()) { 
+        btnSend.removeAttribute('disabled') 
+    } else if (!input.value.trim()) {
+        btnSend.setAttribute("disabled", "disabled");
+    }
+})
 

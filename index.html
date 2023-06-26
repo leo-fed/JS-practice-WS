@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW 15</title>
+    <style>
+        body {
+            font-size: 40px;
+            font-family: sans-serif;
+        }
+
+        .list {
+            padding: 0;
+            list-style-type: none;
+            width: fit-content;
+            margin: 0 auto;
+            margin-top: 33vh;
+        }
+
+        .list__item {
+            margin-bottom: 20px;
+        }
+
+        .list__link {
+            text-decoration: none;
+            color: white;
+            position: relative;
+            font-weight: bold;
+        }
+
+        .list__link::after {
+            content: '';
+            background-color: blue;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            position: absolute;
+            top: -8px;
+            left: -19px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li class="list__item"><a href="./1/index.html" class="list__link">1</a></li>
+        <li class="list__item"><a href="./2/index.html" class="list__link">2</a></li>
+        <li class="list__item"><a href="./3/index.html" class="list__link">3</a></li>
+    </ul>
+</body>
+</html>
